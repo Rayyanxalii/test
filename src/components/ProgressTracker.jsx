@@ -1,0 +1,42 @@
+import { useSelector } from 'react-redux'
+
+function ProgressTracker({ viewedDays }) {
+    const { valentineDays } = useSelector((state) => state.gift)
+    const totalDays = valentineDays.length
+    const viewedCount = viewedDays.size
+
+    return (
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 bg-white/90 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border-2 border-pink-200">
+            <div className="flex items-center gap-4">
+                {/* Progress text */}
+                <div className="text-sm font-bold text-pink-600">
+                    {viewedCount} of {totalDays} days explored
+                </div>
+
+                {/* Heart indicators */}
+                <div className="flex gap-1">
+                    {valentineDays.map((_, index) => (
+                        <div
+                            key={index}
+                            className={`text-2xl transition-all duration-300 ${viewedDays.has(index)
+                                    ? 'opacity-100 scale-100 animate-bounce'
+                                    : 'opacity-30 scale-75 grayscale'
+                                }`}
+                        >
+                            {viewedDays.has(index) ? '💖' : '🤍'}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Completion badge */}
+                {viewedCount === totalDays && (
+                    <div className="ml-2 text-2xl animate-bounce">
+                        🎉
+                    </div>
+                )}
+            </div>
+        </div>
+    )
+}
+
+export default ProgressTracker
