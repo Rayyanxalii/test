@@ -74,29 +74,29 @@ function BouquetModal({ isOpen, onClose }) {
             onClick={onClose}
         >
             <div
-                className="bg-gradient-to-br from-white/95 via-rose-50/95 to-pink-50/95 rounded-3xl p-6 md:p-10 max-w-3xl w-full relative overflow-visible shadow-2xl"
+                className="bg-gradient-to-br from-white/95 via-rose-50/95 to-pink-50/95 rounded-3xl p-6 md:p-10 max-w-3xl w-full relative overflow-visible shadow-2xl overflow-hidden md:overflow-visible"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-3xl transition-all duration-300 hover:scale-110 z-50 shadow-lg"
+                    className="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 hover:scale-110 z-50 shadow-lg"
                 >
                     ×
                 </button>
 
                 {/* Title */}
-                <div className="text-center mb-6">
-                    <h2 className="text-5xl md:text-6xl font-bold text-rose-600 mb-3">
+                <div className="text-center mb-4 md:mb-6 mt-4 md:mt-0">
+                    <h2 className="text-3xl md:text-6xl font-bold text-rose-600 mb-2 md:mb-3">
                         For You, My Love 💕
                     </h2>
-                    <p className="text-xl text-rose-700/90 font-medium">
+                    <p className="text-base md:text-xl text-rose-700/90 font-medium">
                         A bouquet of roses, just for you
                     </p>
                 </div>
 
                 {/* Massive Bouquet Container */}
-                <div className="relative h-[500px] flex items-center justify-center overflow-visible">
+                <div className="relative h-[350px] md:h-[500px] flex items-center justify-center overflow-visible scale-75 md:scale-100 origin-center">
                     {/* Beautiful Vase */}
                     <div className="absolute bottom-0 w-48 h-56 bg-gradient-to-b from-pink-300 via-pink-400 to-pink-500 rounded-t-[3rem] shadow-2xl z-0">
                         <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-pink-200 to-pink-300 rounded-t-[3rem] border-b-4 border-pink-400"></div>
@@ -132,6 +132,7 @@ function BouquetModal({ isOpen, onClose }) {
                     </div>
 
                     {/* Sparkles - appear progressively */}
+                    {/* ... sparkles logic identical ... */}
                     {visibleFlowers > 10 && (
                         <div className="absolute top-5 left-10 text-4xl animate-ping opacity-60">✨</div>
                     )}
@@ -155,12 +156,12 @@ function BouquetModal({ isOpen, onClose }) {
                 </div>
 
                 {/* Message - appears after bouquet is complete */}
-                <div className={`mt-6 text-center transition-all duration-1000 ${visibleFlowers >= 30 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                <div className={`mt-2 md:mt-6 text-center transition-all duration-1000 ${visibleFlowers >= 30 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}>
-                    <p className="text-2xl md:text-3xl text-rose-700 font-bold italic mb-3">
+                    <p className="text-xl md:text-3xl text-rose-700 font-bold italic mb-2 md:mb-3">
                         "Every rose represents a reason I love you"
                     </p>
-                    <p className="text-xl text-rose-600 font-medium">
+                    <p className="text-lg md:text-xl text-rose-600 font-medium">
                         And there are infinite more... 🌹💕
                     </p>
                 </div>
