@@ -73,17 +73,18 @@ function BouquetModal({ isOpen, onClose }) {
             className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4"
             onClick={onClose}
         >
+            {/* Close button - Fixed to top right of screen on mobile, absolute on desktop */}
+            <button
+                onClick={onClose}
+                className="fixed top-4 right-4 z-[60] w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 hover:scale-110 shadow-lg md:absolute md:top-6 md:right-6"
+            >
+                ×
+            </button>
+
             <div
-                className="bg-gradient-to-br from-white/95 via-rose-50/95 to-pink-50/95 rounded-3xl p-6 md:p-10 max-w-3xl w-full relative overflow-visible shadow-2xl overflow-hidden md:overflow-visible"
+                className="bg-gradient-to-br from-white/95 via-rose-50/95 to-pink-50/95 rounded-3xl p-6 md:p-10 max-w-3xl w-full relative overflow-visible shadow-2xl overflow-hidden md:overflow-visible my-auto max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 hover:scale-110 z-50 shadow-lg"
-                >
-                    ×
-                </button>
 
                 {/* Title */}
                 <div className="text-center mb-4 md:mb-6 mt-4 md:mt-0">

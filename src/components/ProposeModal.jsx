@@ -26,17 +26,18 @@ function ProposeModal({ isOpen, onClose }) {
             className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4"
             onClick={onClose}
         >
+            {/* Close button - Fixed to top right of screen on mobile, absolute on desktop */}
+            <button
+                onClick={onClose}
+                className="fixed top-4 right-4 z-[60] w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 hover:scale-110 shadow-lg md:absolute md:top-6 md:right-6"
+            >
+                ×
+            </button>
+
             <div
                 className="bg-gradient-to-br from-pink-50 via-rose-50 to-red-50 rounded-3xl p-8 md:p-12 max-w-2xl w-full relative overflow-visible shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-3xl transition-all duration-300 hover:scale-110 z-50 shadow-lg"
-                >
-                    ×
-                </button>
 
                 {!showCelebration ? (
                     <>
