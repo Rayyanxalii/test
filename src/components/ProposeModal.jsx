@@ -64,9 +64,11 @@ function ProposeModal({ isOpen, onClose }) {
                                 </button>
                             </div>
 
-                            {/* NO Button - Moves on hover */}
+                            {/* NO Button - Moves on hover or touch */}
                             <button
                                 onMouseEnter={moveNoButton}
+                                onTouchStart={moveNoButton}
+                                onClick={moveNoButton}
                                 className="absolute px-8 py-3 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-2xl font-bold text-xl shadow-lg transition-all duration-300"
                                 style={{
                                     top: noButtonPosition.top,
