@@ -41,12 +41,12 @@ function ProposeModal({ isOpen, onClose }) {
                 {!showCelebration ? (
                     <>
                         {/* Proposal Content */}
-                        <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 animate-bounce">💍</div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-rose-600 mb-4">
+                        <div className="text-center mb-6 md:mb-8">
+                            <div className="text-6xl md:text-8xl mb-4 md:mb-6 animate-bounce">💍</div>
+                            <h2 className="text-3xl md:text-5xl font-bold text-rose-600 mb-2 md:mb-4">
                                 A Special Question...
                             </h2>
-                            <p className="text-2xl md:text-3xl text-rose-700 font-medium italic mb-8">
+                            <p className="text-xl md:text-3xl text-rose-700 font-medium italic mb-6 md:mb-8">
                                 "Will you be mine forever?"
                             </p>
                         </div>

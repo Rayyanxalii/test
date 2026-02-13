@@ -78,7 +78,7 @@ function ValentineCard({ onDayViewed }) {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-pink-50/50">
+        <div className="min-h-screen flex flex-col justify-center items-center p-4 py-8 md:py-0 bg-pink-50/50 overflow-y-auto">
             {/* Background Image Overlay */}
             <div
                 className="fixed inset-0 z-0 opacity-20 pointer-events-none"
